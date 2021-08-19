@@ -73,10 +73,7 @@ function result() {
 }
 //=====END OF FUNCTION result===========
 
-//========================
-
 //=====================================================
-
 // console.log(`replace text X => ${replaceInsertX}`);
 // console.log(`replace text Y => ${replaceInsertY}`);
 // console.log(`replace text Z => ${replaceInsertZ}`);
