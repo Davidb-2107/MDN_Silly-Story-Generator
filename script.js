@@ -1,5 +1,5 @@
 const customName = document.getElementById("customname"); //capture Enter custom name
-const randomize = document.querySelector(".randomize");
+const randomize = document.querySelector(".generate-story-btn");
 const story = document.querySelector(".story");
 
 //Fonction qui va permettre de récupèrer une valeur aléatoire dans un tableau
