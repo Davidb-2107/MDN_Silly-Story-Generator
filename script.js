@@ -45,18 +45,12 @@ function result() {
   let zItem = randomValueFromArray(insertZ);
 
   //=====Remplace les insert X Y Z par une valeur aléatoire du tableau X Y Z===============
-  let replaceInsertX = storyText.replace(
+  newStory = newStory.replace(
     /:insertx:/g, // /insertx:/g -> remplace l'ensemble des occurences de insertx
-    randomValueFromArray(insertX)
+    xItem
   );
-  let replaceInsertY = storyText.replace(
-    ":inserty:",
-    randomValueFromArray(insertY)
-  );
-  let replaceInsertZ = storyText.replace(
-    ":insertz:",
-    randomValueFromArray(insertZ)
-  );
+  newStory = newStory.replace(":inserty:", yItem);
+  newStory = newStory.replace(":insertz:", zItem);
 
   if (customName.value !== "") {
     let name = customName.value;
