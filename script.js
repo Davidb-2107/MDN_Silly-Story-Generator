@@ -52,9 +52,10 @@ function result() {
   newStory = newStory.replace(":inserty:", yItem);
   newStory = newStory.replace(":insertz:", zItem);
 
+  //Remplacer Bob par nom dans champ
   if (customName.value !== "") {
     let name = customName.value;
-    storyText.replace("Bob", customName.value);
+    newStory = newStory.replace("Bob", name);
   }
 
   if (document.getElementById("uk").checked) {
