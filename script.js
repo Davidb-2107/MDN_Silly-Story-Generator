@@ -45,27 +45,25 @@ function result() {
   let zItem = randomValueFromArray(insertZ);
 
   //=====Remplace les insert X Y Z par une valeur aléatoire du tableau X Y Z===============
-  let replaceInsertX = storyText.replace(
+  newStory = newStory.replace(
     /:insertx:/g, // /insertx:/g -> remplace l'ensemble des occurences de insertx
-    randomValueFromArray(insertX)
+    xItem
   );
-  let replaceInsertY = storyText.replace(
-    ":inserty:",
-    randomValueFromArray(insertY)
-  );
-  let replaceInsertZ = storyText.replace(
-    ":insertz:",
-    randomValueFromArray(insertZ)
-  );
+  newStory = newStory.replace(":inserty:", yItem);
+  newStory = newStory.replace(":insertz:", zItem);
 
+  //Remplacer Bob par nom dans champ
   if (customName.value !== "") {
     let name = customName.value;
-    storyText.replace("Bob", customName.value);
+    newStory = newStory.replace("Bob", name);
   }
 
+  //Replace Pounds & Farenheit with Stones & Centigrade
   if (document.getElementById("uk").checked) {
-    let weight = Math.round(300);
-    let temperature = Math.round(94);
+    let weight = Math.round(300 * 0.071429) + " stones";
+    newStory = newStory.replace("300 pounds", weight);
+    let temperature = Math.round(((94 - 32) * 5) / 9) + " centigrade";
+    newStory = newStory.replace("94 fahrenheit", temperature);
   }
 
   story.textContent = newStory;
